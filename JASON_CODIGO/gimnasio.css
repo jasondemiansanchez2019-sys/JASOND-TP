@@ -1,0 +1,198 @@
+/* ================================================
+   BASE DE DATOS - GIMNASIO
+   UTN - Diseño Industrial Oscuro
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Variables ─────────────────────────────── */
+:root {
+  --negro:       #0D0D0D;
+  --gris-oscuro: #1A1A1A;
+  --gris-medio:  #2C2C2C;
+  --gris-borde:  #3A3A3A;
+  --rojo:        #E63946;
+  --rojo-suave:  #FF6B75;
+  --blanco:      #F0F0F0;
+  --gris-texto:  #9A9A9A;
+  --verde:       #2DC653;
+  --amarillo:    #F4C430;
+  --azul:        #4A90E2;
+
+  --fuente-titulo: 'Barlow Condensed', sans-serif;
+  --fuente-cuerpo: 'Inter', sans-serif;
+
+  --radio:     4px;
+  --radio-lg:  8px;
+  --sombra:    0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--negro);
+  color: var(--blanco);
+  font-family: var(--fuente-cuerpo);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utilidades ─────────────────────────────── */
+.tag {
+  display: inline-block;
+  font-family: var(--fuente-titulo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radio);
+  border: 1px solid currentColor;
+}
+
+.tag-rojo    { color: var(--rojo);     border-color: var(--rojo);     background: rgba(230,57,70,0.08); }
+.tag-verde   { color: var(--verde);    border-color: var(--verde);    background: rgba(45,198,83,0.08); }
+.tag-amarillo{ color: var(--amarillo); border-color: var(--amarillo); background: rgba(244,196,48,0.08); }
+.tag-azul    { color: var(--azul);     border-color: var(--azul);     background: rgba(74,144,226,0.08); }
+
+/* ── Header ─────────────────────────────────── */
+header {
+  background-color: var(--gris-oscuro);
+  border-bottom: 2px solid var(--rojo);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-icono {
+  width: 36px;
+  height: 36px;
+  background: var(--rojo);
+  border-radius: var(--radio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.logo-texto {
+  font-family: var(--fuente-titulo);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.logo-texto span {
+  color: var(--rojo);
+}
+
+.header-nav {
+  display: flex;
+  gap: 6px;
+}
+
+.header-nav a {
+  color: var(--gris-texto);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radio);
+  transition: color 0.2s, background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.header-nav a:hover {
+  color: var(--blanco);
+  background: var(--gris-medio);
+}
+
+.header-nav a.activo {
+  color: var(--rojo);
+  background: rgba(230,57,70,0.1);
+}
+
+/* ── Hero / Portada ─────────────────────────── */
+.hero {
+  padding: 56px 40px 48px;
+  border-bottom: 1px solid var(--gris-borde);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 40px;
+}
+
+.hero-eyebrow {
+  font-family: var(--fuente-titulo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--rojo);
+}
+
+.hero-subtitulo {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--gris-texto);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: right;
+}
+
+.hero-meta-item {
+  font-size: 12px;
+  color: var(--gris-texto);
+}
+
+.hero-meta-item strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blanco);
+  line-height: 1;
+}
+

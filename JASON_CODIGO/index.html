@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base de Datos – GymCore | UTN</title>
+  <link rel="stylesheet" href="gimnasio.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header>
+    <div class="header-logo">
+      <div class="logo-icono">💪</div>
+      <span class="logo-texto">Gym<span>Core</span></span>
+    </div>
+    <nav class="header-nav">
+      <a href="#ejercicios" class="activo">Ejercicios</a>
+      <a href="#rutinas">Rutinas</a>
+      <a href="#socios">Socios</a>
+      <a href="#modelo">Modelo de Datos</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">UTN — Bases de Datos I &nbsp;·&nbsp; Trabajo Práctico</p>
+      <h1>Base de<br /><em>Datos</em><br />Gimnasio</h1>
+      <p class="hero-subtitulo">
+        Sistema de gestión para rutinas de entrenamiento, ejercicios, socios y turnos.
+        Diseñado con modelo relacional normalizado hasta 3FN.
+      </p>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <strong>6</strong>Tablas
+      </div>
+      <div class="hero-meta-item">
+        <strong>24</strong>Ejercicios
+      </div>
+      <div class="hero-meta-item">
+        <strong>8</strong>Rutinas
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════ -->
+  <main>
+
+    <!-- ── Estadísticas generales ── -->
+    <section>
+      <div class="seccion-titulo">
+        <span class="seccion-num">01</span>
+        <h2>Resumen del Sistema</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-numero">24</div>
+          <div class="stat-label">Ejercicios registrados</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-numero">8</div>
+          <div class="stat-label">Rutinas activas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-numero">42</div>
+          <div class="stat-label">Socios inscriptos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-numero">6</div>
+          <div class="stat-label">Tablas en el modelo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Catálogo de ejercicios ── -->
+    <section id="ejercicios">
+      <div class="seccion-titulo">
+        <span class="seccion-num">02</span>
+        <h2>Catálogo de Ejercicios</h2>
+      </div>
+
+      <div class="tabla-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ejercicio</th>
+              <th>Categoría</th>
+              <th>Equipamiento</th>
+              <th>Intensidad</th>
+              <th>Series × Reps</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>#001</td>
+              <td>
+                <div class="ejercicio-nombre">Press de Banca</div>
+                <div class="ejercicio-musculo">Pectoral mayor, tríceps, deltoides</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Barra + discos</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-alta" style="width:75%"></div></div>
+                  <span class="barra-label">Alta</span>
+                </div>
+              </td>
+              <td>4 × 8–12</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#002</td>
+              <td>
+                <div class="ejercicio-nombre">Sentadilla Trasera</div>
+                <div class="ejercicio-musculo">Cuádriceps, glúteos, isquiotibiales</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Barra + discos</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-maxima" style="width:95%"></div></div>
+                  <span class="barra-label">Máxima</span>
+                </div>
+              </td>
+              <td>5 × 5</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#003</td>
+              <td>
+                <div class="ejercicio-nombre">Dominadas</div>
+                <div class="ejercicio-musculo">Dorsal ancho, bíceps, romboides</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Barra fija</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-alta" style="width:70%"></div></div>
+                  <span class="barra-label">Alta</span>
+                </div>
+              </td>
+              <td>4 × Máx.</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#004</td>
+              <td>
+                <div class="ejercicio-nombre">Peso Muerto</div>
+                <div class="ejercicio-musculo">Cadena posterior, core, trapecio</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Barra + discos</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-maxima" style="width:100%"></div></div>
+                  <span class="barra-label">Máxima</span>
+                </div>
+              </td>
+              <td>4 × 4–6</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#005</td>
+              <td>
+                <div class="ejercicio-nombre">Remo con Barra</div>
+                <div class="ejercicio-musculo">Dorsal, bíceps, deltoides posterior</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Barra + discos</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-media" style="width:60%"></div></div>
+                  <span class="barra-label">Media</span>
+                </div>
+              </td>
+              <td>4 × 10</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#006</td>
+              <td>
+                <div class="ejercicio-nombre">Cinta de Correr</div>
+                <div class="ejercicio-musculo">Cardiovascular, piernas</div>
+              </td>
+              <td><span class="tag tag-azul">Cardio</span></td>
+              <td>Cinta</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-media" style="width:50%"></div></div>
+                  <span class="barra-label">Media</span>
+                </div>
+              </td>
+              <td>30–45 min</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#007</td>
+              <td>
+                <div class="ejercicio-nombre">Plancha Abdominal</div>
+                <div class="ejercicio-musculo">Core, transverso, oblicuos</div>
+              </td>
+              <td><span class="tag tag-amarillo">Core</span></td>
+              <td>Sin equipamiento</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-baja" style="width:30%"></div></div>
+                  <span class="barra-label">Baja</span>
+                </div>
+              </td>
+              <td>3 × 60 seg</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+            <tr>
+              <td>#008</td>
+              <td>
+                <div class="ejercicio-nombre">Hip Thrust</div>
+                <div class="ejercicio-musculo">Glúteo mayor, isquiotibiales</div>
+              </td>
+              <td><span class="tag tag-rojo">Fuerza</span></td>
+              <td>Banco + barra</td>
+              <td>
+                <div class="barra-wrap">
+                  <div class="barra-intensidad"><div class="barra-fill fill-alta" style="width:65%"></div></div>
+                  <span class="barra-label">Alta</span>
+                </div>
+              </td>
+              <td>4 × 12</td>
+              <td><span class="tag tag-verde">Activo</span></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── Rutinas ── -->
+    <section id="rutinas">
+      <div class="seccion-titulo">
+        <span class="seccion-num">03</span>
+        <h2>Rutinas de Entrenamiento</h2>
+      </div>
+
+      <div class="rutinas-grid">
+
+        <div class="rutina-card">
+          <div class="rutina-header">
+            <div class="rutina-nombre">Push Pull<br />Legs</div>
+            <span class="tag tag-rojo">Fuerza</span>
+          </div>
+          <div class="rutina-body">
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Frecuencia</span>
+              <span class="rutina-dato-val">6 días / sem.</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Duración</span>
+              <span class="rutina-dato-val">60–75 min</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Nivel</span>
+              <span class="rutina-dato-val">Intermedio</span>
+            </div>
+          </div>
+          <div class="rutina-ejercicios">
+            <div class="rutina-ejercicio-item">Press de Banca · Dominadas</div>
+            <div class="rutina-ejercicio-item">Sentadilla · Peso Muerto</div>
+            <div class="rutina-ejercicio-item">Remo · Press Militar</div>
+          </div>
+        </div>
+
+        <div class="rutina-card">
+          <div class="rutina-header">
+            <div class="rutina-nombre">Full<br />Body</div>
+            <span class="tag tag-verde">General</span>
+          </div>
+          <div class="rutina-body">
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Frecuencia</span>
+              <span class="rutina-dato-val">3 días / sem.</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Duración</span>
+              <span class="rutina-dato-val">50–60 min</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Nivel</span>
+              <span class="rutina-dato-val">Principiante</span>
+            </div>
+          </div>
+          <div class="rutina-ejercicios">
+            <div class="rutina-ejercicio-item">Sentadilla goblet</div>
+            <div class="rutina-ejercicio-item">Flexiones · Remo mancuerna</div>
+            <div class="rutina-ejercicio-item">Plancha · Hip Thrust</div>
+          </div>
+        </div>
+
+        <div class="rutina-card">
+          <div class="rutina-header">
+            <div class="rutina-nombre">Definición<br />Cardio</div>
+            <span class="tag tag-azul">Cardio</span>
+          </div>
+          <div class="rutina-body">
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Frecuencia</span>
+              <span class="rutina-dato-val">5 días / sem.</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Duración</span>
+              <span class="rutina-dato-val">45 min</span>
+            </div>
+            <div class="rutina-dato">
+              <span class="rutina-dato-key">Nivel</span>
+              <span class="rutina-dato-val">Todos</span>
+            </div>
+          </div>
+          <div class="rutina-ejercicios">
+            <div class="rutina-ejercicio-item">Cinta de correr · Bici</div>
+            <div class="rutina-ejercicio-item">Circuito funcional</div>
+            <div class="rutina-ejercicio-item">Abdominales · Plancha</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Socios ── -->
+    <section id="socios">
+      <div class="seccion-titulo">
+        <span class="seccion-num">04</span>
+        <h2>Socios Registrados</h2>
+      </div>
+
+      <div class="socios-grid">
+
+        <div class="socio-card">
+          <div class="socio-avatar">MR</div>
+          <div class="socio-nombre">Martina Rodríguez</div>
+          <div class="socio-plan">Plan Premium · Rutina PPL</div>
+          <span class="tag tag-verde">Activo</span>
+        </div>
+
+        <div class="socio-card">
+          <div class="socio-avatar">LL</div>
+          <div class="socio-nombre">Lucas López</div>
+          <div class="socio-plan">Plan Básico · Full Body</div>
+          <span class="tag tag-verde">Activo</span>
+        </div>
+
+        <div class="socio-card">
+          <div class="socio-avatar">SA</div>
+          <div class="socio-nombre">Sofía Aguilar</div>
+          <div class="socio-plan">Plan Premium · Definición</div>
+          <span class="tag tag-verde">Activo</span>
+        </div>
+
+        <div class="socio-card">
+          <div class="socio-avatar">CF</div>
+          <div class="socio-nombre">Carlos Fernández</div>
+          <div class="socio-plan">Plan Básico · Full Body</div>
+          <span class="tag tag-amarillo">Suspendido</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Modelo de datos (ERD) ── -->
+    <section id="modelo">
+      <div class="seccion-titulo">
+        <span class="seccion-num">05</span>
+        <h2>Modelo Relacional</h2>
+      </div>
+
+      <div class="er-grid">
+
+        <!-- SOCIOS -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Socios</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_socio</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nombre</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">apellido</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">email</span>
+            <span class="er-campo-tipo">VARCHAR(150)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">fecha_alta</span>
+            <span class="er-campo-tipo">DATE</span>
+          </div>
+          <div class="er-campo">
+            <div>
+              <span class="fk-badge">FK</span>
+              <span class="er-campo-nombre"> id_plan</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">estado</span>
+            <span class="er-campo-tipo">ENUM</span>
+          </div>
+        </div>
+
+        <!-- PLANES -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Planes</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_plan</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nombre_plan</span>
+            <span class="er-campo-tipo">VARCHAR(80)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">precio_mensual</span>
+            <span class="er-campo-tipo">DECIMAL(8,2)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">acceso_clases</span>
+            <span class="er-campo-tipo">BOOLEAN</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">descripcion</span>
+            <span class="er-campo-tipo">TEXT</span>
+          </div>
+        </div>
+
+        <!-- RUTINAS -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Rutinas</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_rutina</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nombre_rutina</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">objetivo</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nivel</span>
+            <span class="er-campo-tipo">ENUM</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">duracion_sem</span>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <div>
+              <span class="fk-badge">FK</span>
+              <span class="er-campo-nombre"> id_instructor</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+        </div>
+
+        <!-- EJERCICIOS -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Ejercicios</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_ejercicio</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nombre</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">grupo_muscular</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">categoria</span>
+            <span class="er-campo-tipo">ENUM</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">equipamiento</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">descripcion</span>
+            <span class="er-campo-tipo">TEXT</span>
+          </div>
+        </div>
+
+        <!-- RUTINA_EJERCICIO (tabla intermedia) -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Rutina_Ejercicio</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_re</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <div>
+              <span class="fk-badge">FK</span>
+              <span class="er-campo-nombre"> id_rutina</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <div>
+              <span class="fk-badge">FK</span>
+              <span class="er-campo-nombre"> id_ejercicio</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">series</span>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">repeticiones</span>
+            <span class="er-campo-tipo">VARCHAR(20)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">orden</span>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+        </div>
+
+        <!-- INSTRUCTORES -->
+        <div class="er-tabla">
+          <div class="er-tabla-nombre">Instructores</div>
+          <div class="er-campo">
+            <div>
+              <span class="pk-badge">PK</span>
+              <span class="er-campo-nombre"> id_instructor</span>
+            </div>
+            <span class="er-campo-tipo">INT</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">nombre</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">apellido</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">especialidad</span>
+            <span class="er-campo-tipo">VARCHAR(100)</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">fecha_ingreso</span>
+            <span class="er-campo-tipo">DATE</span>
+          </div>
+          <div class="er-campo">
+            <span class="er-campo-nombre">matricula</span>
+            <span class="er-campo-tipo">VARCHAR(30)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Relaciones ── -->
+    <section>
+      <div class="seccion-titulo">
+        <span class="seccion-num">06</span>
+        <h2>Relaciones entre Entidades</h2>
+      </div>
+
+      <div class="relaciones-lista">
+
+        <div class="relacion-item">
+          <div>
+            <div class="relacion-entidades">Socios <span>→</span> Planes</div>
+            <div class="relacion-tipo">Muchos socios pueden pertenecer a un mismo plan (N:1)</div>
+          </div>
+          <span class="tag tag-amarillo">N : 1</span>
+        </div>
+
+        <div class="relacion-item">
+          <div>
+            <div class="relacion-entidades">Rutinas <span>→</span> Ejercicios</div>
+            <div class="relacion-tipo">Una rutina contiene varios ejercicios y un ejercicio puede estar en varias rutinas (N:M)</div>
+          </div>
+          <span class="tag tag-rojo">N : M</span>
+        </div>
+
+        <div class="relacion-item">
+          <div>
+            <div class="relacion-entidades">Instructores <span>→</span> Rutinas</div>
+            <div class="relacion-tipo">Un instructor puede diseñar varias rutinas (1:N)</div>
+          </div>
+          <span class="tag tag-azul">1 : N</span>
+        </div>
+
+        <div class="relacion-item">
+          <div>
+            <div class="relacion-entidades">Socios <span>→</span> Rutinas</div>
+            <div class="relacion-tipo">Un socio puede realizar múltiples rutinas a lo largo del tiempo (N:M)</div>
+          </div>
+          <span class="tag tag-rojo">N : M</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <div>
+      <strong>GymCore</strong> — Base de Datos de Gimnasio
+    </div>
+    <div>
+      <strong>UTN</strong> · Bases de Datos I
+      &nbsp;·&nbsp;
+      <span class="footer-rojo">Trabajo Práctico 2025</span>
+    </div>
+  </footer>
+
+</body>
+</html>
