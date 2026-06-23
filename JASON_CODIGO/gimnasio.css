@@ -463,3 +463,82 @@ tbody td {
 }
 
 
+
+/* ── Tabla Relacional (ERD simplificado) ───── */
+.er-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.er-tabla {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio-lg);
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.er-tabla-nombre {
+  background: var(--gris-medio);
+  padding: 10px 16px;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--rojo);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pk-badge {
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--rojo);
+  color: white;
+  padding: 1px 5px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.fk-badge {
+  font-size: 9px;
+  font-weight: 700;
+  background: var(--azul);
+  color: white;
+  padding: 1px 5px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.er-campo {
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+}
+
+.er-campo:last-child {
+  border-bottom: none;
+}
+
+.er-campo:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.er-campo-nombre {
+  color: var(--blanco);
+  font-weight: 500;
+}
+
+.er-campo-tipo {
+  color: var(--amarillo);
+  font-size: 11px;
+  font-family: monospace;
+  letter-spacing: 0.03em;
+}
