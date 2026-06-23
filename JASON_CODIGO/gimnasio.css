@@ -376,4 +376,90 @@ tbody td {
   min-width: 42px;
 }
 
+/* ── Rutinas (cards) ────────────────────────── */
+.rutinas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.rutina-card {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio-lg);
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.rutina-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gris-texto);
+}
+
+.rutina-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--gris-borde);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.rutina-nombre {
+  font-family: var(--fuente-titulo);
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.rutina-body {
+  padding: 16px 20px;
+}
+
+.rutina-dato {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 13px;
+}
+
+.rutina-dato:last-child {
+  border-bottom: none;
+}
+
+.rutina-dato-key {
+  color: var(--gris-texto);
+}
+
+.rutina-dato-val {
+  font-weight: 600;
+  color: var(--blanco);
+}
+
+.rutina-ejercicios {
+  padding: 12px 20px 20px;
+}
+
+.rutina-ejercicio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--gris-texto);
+}
+
+.rutina-ejercicio-item::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--rojo);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
 
