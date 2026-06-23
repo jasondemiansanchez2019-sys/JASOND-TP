@@ -196,3 +196,184 @@ header {
   line-height: 1;
 }
 
+/* ── Layout principal ───────────────────────── */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Sección genérica ───────────────────────── */
+.seccion-titulo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.seccion-titulo h2 {
+  font-family: var(--fuente-titulo);
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.seccion-titulo::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gris-borde);
+}
+
+.seccion-num {
+  font-family: var(--fuente-titulo);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--rojo);
+  letter-spacing: 0.1em;
+  min-width: 28px;
+}
+
+/* ── Estadísticas (cards numéricas) ─────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-borde);
+  border-radius: var(--radio-lg);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover {
+  border-color: var(--rojo);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--rojo);
+}
+
+.stat-numero {
+  font-family: var(--fuente-titulo);
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--blanco);
+}
+
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gris-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+
+/* ── Tabla de ejercicios ────────────────────── */
+.tabla-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radio-lg);
+  border: 1px solid var(--gris-borde);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: var(--gris-medio);
+}
+
+thead th {
+  padding: 14px 18px;
+  text-align: left;
+  font-family: var(--fuente-titulo);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gris-texto);
+  border-bottom: 2px solid var(--rojo);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--gris-borde);
+  transition: background 0.15s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+tbody td {
+  padding: 13px 18px;
+  vertical-align: middle;
+}
+
+.ejercicio-nombre {
+  font-weight: 600;
+  color: var(--blanco);
+}
+
+.ejercicio-musculo {
+  font-size: 12px;
+  color: var(--gris-texto);
+  margin-top: 2px;
+}
+
+/* Barra de intensidad */
+.barra-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.barra-intensidad {
+  height: 6px;
+  width: 80px;
+  background: var(--gris-medio);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.barra-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.fill-baja    { background: var(--verde);    }
+.fill-media   { background: var(--amarillo); }
+.fill-alta    { background: var(--rojo);     }
+.fill-maxima  { background: linear-gradient(90deg, var(--rojo), var(--rojo-suave)); }
+
+.barra-label {
+  font-size: 12px;
+  color: var(--gris-texto);
+  min-width: 42px;
+}
+
+
