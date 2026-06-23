@@ -630,4 +630,53 @@ tbody td {
   color: var(--gris-texto);
   margin-top: 2px;
 }
+/* ── Footer ─────────────────────────────────── */
+footer {
+  background: var(--gris-oscuro);
+  border-top: 1px solid var(--gris-borde);
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--gris-texto);
+}
 
+footer strong {
+  color: var(--blanco);
+}
+
+.footer-rojo {
+  color: var(--rojo);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  header      { padding: 0 20px; }
+  .hero       { padding: 36px 20px; grid-template-columns: 1fr; }
+  .hero-meta  { flex-direction: row; text-align: left; }
+  main        { padding: 36px 20px 60px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .rutinas-grid { grid-template-columns: 1fr; }
+  .er-grid    { grid-template-columns: 1fr; }
+  .socios-grid { grid-template-columns: repeat(2, 1fr); }
+  .header-nav { display: none; }
+}
+
+@media (max-width: 500px) {
+  .stats-grid  { grid-template-columns: 1fr; }
+  .socios-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Animaciones ─────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card,
+.rutina-card,
+.er-tabla,
+.socio-card {
+  animation: fadeIn 0.4s ease both;
+}
